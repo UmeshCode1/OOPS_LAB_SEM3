@@ -116,86 +116,470 @@
   </style>
 </head>
 <body>
-  <h1>OOPS Lab - 3rd Semester</h1>
-  <h2 class="highlight typing">👋 Hello, I’m Umesh Patel!</h2>
-  <p style="text-align:center">This repository showcases a collection of OOPS lab programs, implemented during my 3rd semester at Oriental College of Technology, Bhopal.</p>
+  <div class="hero-section">
+    <div class="cyber-grid">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+    
+    <h1 class="neo-title">
+      <span class="glitch" data-text="OOPS">OOPS</span>
+      <span class="highlight">Lab - 3rd Semester</span>
+    </h1>
+
+  
+
+      <h2 class="welcome-text">
+        <span class="emoji-wave">👋</span> 
+        Hello, I'm 
+        <span class="name-highlight" data-text="Umesh Patel">Umesh Patel</span>
+      </h2>
+
+      <p class="intro-text">
+        <span class="typing-effect">Welcome to my digital sanctuary where Object-Oriented Programming transforms into art.</span>
+        <br>
+        <span class="fade-in">This repository chronicles my OOPS journey at Oriental College of Technology, Bhopal.</span>
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .hero-section {
+      position: relative;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,255,242,0.1);
+    }
+
+    .cyber-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      opacity: 0.1;
+      background: 
+        linear-gradient(90deg, #00fff2 1px, transparent 1px) 0 0 / 50px 50px,
+        linear-gradient(0deg, #00fff2 1px, transparent 1px) 0 0 / 50px 50px;
+      animation: gridMove 20s linear infinite;
+    }
+
+    .neo-title {
+      position: relative;
+      font-size: 4.5em;
+      margin-bottom: 2rem;
+      z-index: 1;
+    }
+
+    .glitch {
+      position: relative;
+      color: #00fff2;
+      text-shadow: 3px 3px 0 #ff00ff;
+      animation: glitch 3s infinite;
+    }
+
+    .avatar-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 2rem;
+    }
+
+    .avatar-hexagon {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #00fff2, #4fb3bf);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      animation: rotate 10s linear infinite;
+    }
+
+    .avatar-img {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: radial-gradient(circle, #00fff2 0%, transparent 70%);
+      opacity: 0.5;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .welcome-text {
+      font-size: 2em;
+      margin-bottom: 1.5rem;
+    }
+
+    .name-highlight {
+      position: relative;
+      color: #00fff2;
+      font-weight: bold;
+      text-shadow: 2px 2px 0 rgba(255,0,255,0.5);
+    }
+
+    .emoji-wave {
+      display: inline-block;
+      animation: wave 2.5s ease-in-out infinite;
+      transform-origin: 70% 70%;
+    }
+
+    .typing-effect {
+      display: block;
+      overflow: hidden;
+      border-right: 3px solid #00fff2;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+    }
+
+    .fade-in {
+      display: block;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards 3.5s;
+    }
+
+    @keyframes gridMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(50px); }
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, -2px); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.3; }
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      20%, 60% { transform: rotate(25deg); }
+      40%, 80% { transform: rotate(-25deg); }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00fff2; }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 
   <hr>
 
-  <!-- Department Details -->
-  <div class="department fade-in-bottom">
-    <h2 class="highlight">OOPS Lab Programs</h2>
-    
-    <div class="card">
-      <h2 class="highlight card">Department</h2>
-      <p><strong>Academic Year:</strong> 2024-25</p>
-      <p><strong>Department:</strong> <span class="">CSE-AIML</span></p>
-      <p><strong>Student Name:</strong> <span class="">UMESH PATEL</span></p>
-      <p><strong>Enrollment Number:</strong> <span class="blinking ">0126AL231140</span></p>
-      <p><strong>Class:</strong> <span class="highlight">AIML 3rd B</span></p>
-    </div>
-    <div class="programs-container"></div>
-      <h2 class="section-title glow-text"></h2>
-        <div class="title-container"></div>
-          <i class="fas fa-code fa-bounce"></i>
-          <span class="title-text"><strong>Repository Programs</strong></span>
-          <div class="underline-animation"></div>
+  <!-- Ultra-Modern Department Details with Holographic Effects -->
+  <div class="cyber-container">
+    <div class="cyber-terminal" data-tilt>
+      <div class="terminal-header">
+        <div class="header-controls">
+          <span class="control red"></span>
+          <span class="control yellow"></span>
+          <span class="control green"></span>
         </div>
-      </h2>
+        <h2 class="terminal-title">STUDENT PROFILE</h2>
+        <div class="loading-bar"><div class="progress"></div></div>
+      </div>
 
-      <style>
-      .title-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin: 2rem 0;
-        text-align: center;
-      }
+      <div class="terminal-body">
+        <div class="glitch-container">
+          <div class="hologram-projector"></div>
+          
+          <!-- Dynamic Info Grid -->
+          <div class="info-matrix">
+            <div class="matrix-item" data-category="TEMPORAL">
+              <div class="icon-wrapper">
+                <i class="fas fa-clock-rotate-left pulse-icon"></i>
+              </div>
+              <div class="data-stream">
+                <label>Academic Timeline</label>
+                <span class="value-display">2024-25</span>
+                <div class="data-particles"></div>
+              </div>
+            </div>
 
-      .section-title {
-        font-size: 2.5rem;
-        text-align: center;
-        color: var(--neon-glow);
-        text-shadow: 0 0 10px var(--neon-glow);
-      }
 
-      .title-text {
-        background: linear-gradient(90deg, var(--neon-glow), #fff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+            <div class="matrix-item" data-category="DIVISION">
+              <div class="icon-wra</div>pper">
+                <i class="fas fa-microchip quantum-icon"></i>
+              </div>
+              <div class="data-stream">
+                <label>Neural Network</label>
+                <span class="value-display">CSE-AIML</span>
+                <div class="quantum-particles"></div>
+              </div>
+            </div>
+
+            <div class="matrix-item" data-category="IDENTITY">
+              <div class="icon-wrapper">
+                <i class="fas fa-dna helix-spin"></i>
+              </div>
+              <div class="data-stream">
+                <label>System User</label>
+                <span class="value-display cyberpunk-text">UMESH PATEL</span>
+                <div class="dna-helix"></div>
+              </div>
+            </div>
+
+            <div class="matrix-item" data-category="ACCESS">
+              <div class="icon-wrapper">
+                <i class="fas fa-fingerprint scan-effect"></i>
+              </div>
+              <div class="data-stream">
+                <label>Access Code</label>
+                <span class="value-display matrix-code">0126AL231140</span>
+                <div class="scan-line"></div>
+              </div>
+            </div>
+
+            <div class="matrix-item" data-category="UNIT">
+              <div class="icon-wrapper">
+                <i class="fas fa-robot ai-pulse"></i>
+              </div>
+              <div class="data-stream">
+                <label>Neural Cluster</label>
+                <span class="value-display">AIML 3rd B</span>
+                <div class="neural-network"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .holographic-container {
+        margin: 3rem auto;
+        max-width: 900px;
         position: relative;
-        font-weight: bold;
+        perspective: 3000px;
+      }
+
+      .cyber-terminal {
+        background: rgba(10, 15, 30, 0.95);
+        border: 2px solid #00fff2;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 0 30px rgba(0, 255, 242, 0.3),
+                    inset 0 0 20px rgba(0, 255, 242, 0.2);
+      }
+
+      .terminal-header {
+        border-bottom: 2px solid rgba(0, 255, 242, 0.3);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .header-controls {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 1rem;
+      }
+
+      .control {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        opacity: 0.8;
+      }
+
+      .control.red { background: #ff5f56; }
+      .control.yellow { background: #ffbd2e; }
+      .control.green { background: #27c93f; }
+
+      .terminal-title {
+        color: #00fff2;
         text-align: center;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 3px;
+        margin: 0;
+        text-shadow: 0 0 10px rgba(0, 255, 242, 0.8);
       }
 
-      .fa-bounce {
-        animation: bounce 2s infinite;
+      .loading-bar {
+        height: 2px;
+        background: rgba(0, 255, 242, 0.2);
+        margin-top: 1rem;
+        position: relative;
+        overflow: hidden;
       }
 
-      .underline-animation {
-        width: 100%;
-        height: 3px;
-        background: var(--neon-glow);
+      .progress {
         position: absolute;
-        bottom: -10px;
-        left: 0;
-        transform: scaleX(0);
-        transform-origin: left;
-        animation: underline 3s ease-in-out infinite;
+        height: 100%;
+        width: 50%;
+        background: #00fff2;
+        animation: loading 2s infinite;
       }
 
-      @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+      .info-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        position: relative;
       }
 
-      @keyframes underline {
-        0% { transform: scaleX(0); }
-        50% { transform: scaleX(1); }
-        100% { transform: scaleX(0); }
+      .matrix-item {
+        background: rgba(0, 255, 242, 0.05);
+        border-radius: 15px;
+        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(0, 255, 242, 0.2);
       }
-      </style>
+
+      .matrix-item:hover {
+        transform: translateZ(20px);
+        background: rgba(0, 255, 242, 0.1);
+        box-shadow: 0 0 20px rgba(0, 255, 242, 0.3);
+      }
+
+      .icon-wrapper i {
+        font-size: 2rem;
+        color: #00fff2;
+      }
+
+      .data-stream label {
+        display: block;
+        color: rgba(0, 255, 242, 0.7);
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .value-display {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 255, 242, 0.8);
+      }
+
+      /* Animations */
+      @keyframes loading {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(200%); }
+      }
+
+      .pulse-icon {
+        animation: pulse 2s infinite;
+      }
+
+      .quantum-icon {
+        animation: quantum 3s infinite;
+      }
+
+      .helix-spin {
+        animation: spin 4s linear infinite;
+      }
+
+      .scan-effect {
+        animation: scan 2s infinite;
+      }
+
+      .ai-pulse {
+        animation: aiPulse 3s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+      }
+
+      @keyframes quantum {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); }
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes scan {
+        0% { opacity: 1; transform: translateY(0); }
+        50% { opacity: 0.5; transform: translateY(-5px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes aiPulse {
+        0%, 100% { filter: hue-rotate(0deg); }
+        50% { filter: hue-rotate(180deg); }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .cyber-terminal {
+          margin: 1rem;
+          padding: 1rem;
+        }
+
+        .info-matrix {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <script>
+      // Initialize tilt effect
+      VanillaTilt.init(document.querySelector(".cyber-terminal"), {
+        max: 8,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3,
+        scale: 1.02
+      });
+
+      // Add interactive particle effects
+      document.querySelectorAll('.matrix-item').forEach(item => {
+        item.addEventListener('mouseover', () => {
+          item.style.transform = `translateZ(30px) scale(1.05)`;
+        });
+
+        item.addEventListener('mouseout', () => {
+          item.style.transform = 'translateZ(0) scale(1)';
+        });
+      });
+    </script>
+  </div>
+    <div class="programs-container" style="text-align: center;">
+      <h2 class="section-title glow-text">
+      <i class="fas fa-code"></i> Repository Programs
+      </h2>
       
       <div class="programs-grid">
         <!-- Program cards with hover effects and animations -->
