@@ -142,7 +142,55 @@
       <p class="intro-text">
         <span class="typing-effect">Exploring the Digital Frontier of Object-Oriented Programming</span>
         <br>
-        <span class="fade-in">Creating Digital Magic at Oriental College of Technology, Bhopal</span>
+        <span class="cyber-text">
+          Level Up @ <span class="neon-text">Oriental College of Technology</span>
+          <span class="location-badge">[ Bhopal Base ]</span>
+        </span>
+
+        <style>
+        .cyber-text {
+          animation: textPulse 2s infinite;
+          font-family: 'Press Start 2P', cursive;
+          font-size: 1.2em;
+          text-shadow: 0 0 5px #00fff2;
+        }
+
+        .neon-text {
+          color: #ff00ff;
+          text-shadow: 
+            0 0 5px #ff00ff,
+            0 0 10px #ff00ff,
+            0 0 20px #ff00ff;
+          animation: neonFlicker 3s infinite;
+        }
+
+        .location-badge {
+          background: rgba(0,255,242,0.1);
+          border: 1px solid #00fff2;
+          padding: 2px 8px;
+          border-radius: 4px;
+          font-size: 0.8em;
+          margin-left: 8px;
+          animation: badgePulse 2s infinite;
+        }
+
+        @keyframes textPulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+
+        @keyframes neonFlicker {
+          0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+          }
+          20%, 24%, 55% { text-shadow: none; }
+        }
+
+        @keyframes badgePulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+        </style>
       </p>
     </div>
   </div>
@@ -274,8 +322,10 @@
       50% { filter: brightness(1.5); }
     }
 
-    /* Keep existing animations but modify as needed */
-    /* ... rest of your existing styles ... */
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 30px 30px; }
+    }
   </style>
 
   <hr>
