@@ -126,20 +126,23 @@
     <h1 class="neo-title">
       <span class="glitch" data-text="OOPS">OOPS</span>
       <span class="highlight">Lab - 3rd Semester</span>
+      <div class="circuit-lines"></div>
     </h1>
 
-  
+    <div class="matrix-rain"></div>
 
-      <h2 class="welcome-text">
-        <span class="emoji-wave">👋</span> 
-        Hello, I'm 
-        <span class="name-highlight" data-text="Umesh Patel">Umesh Patel</span>
-      </h2>
+    <h2 class="welcome-text">
+      <span class="emoji-wave">🤖</span> 
+      Greetings, I'm 
+      <span class="name-highlight cyber-glow" data-text="Umesh Patel">Umesh Patel</span>
+    </h2>
 
+    <div class="cyber-badge">
+      <div class="badge-glow"></div>
       <p class="intro-text">
-        <span class="typing-effect">Welcome to my digital sanctuary where Object-Oriented Programming transforms into art.</span>
+        <span class="typing-effect">Exploring the Digital Frontier of Object-Oriented Programming</span>
         <br>
-        <span class="fade-in">This repository chronicles my OOPS journey at Oriental College of Technology, Bhopal.</span>
+        <span class="fade-in">Creating Digital Magic at Oriental College of Technology, Bhopal</span>
       </p>
     </div>
   </div>
@@ -148,11 +151,11 @@
     .hero-section {
       position: relative;
       text-align: center;
-      padding: 3rem 2rem;
-      background: rgba(0,0,0,0.3);
+      padding: 4rem 2rem;
+      background: rgba(0,0,0,0.5);
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(0,255,242,0.1);
+      box-shadow: 0 0 60px rgba(0,255,242,0.2);
     }
 
     .cyber-grid {
@@ -162,138 +165,117 @@
       right: 0;
       bottom: 0;
       z-index: 0;
-      opacity: 0.1;
+      opacity: 0.15;
       background: 
-        linear-gradient(90deg, #00fff2 1px, transparent 1px) 0 0 / 50px 50px,
-        linear-gradient(0deg, #00fff2 1px, transparent 1px) 0 0 / 50px 50px;
-      animation: gridMove 20s linear infinite;
+        linear-gradient(90deg, #00fff2 1px, transparent 1px) 0 0 / 30px 30px,
+        linear-gradient(0deg, #00fff2 1px, transparent 1px) 0 0 / 30px 30px;
+      animation: gridMove 15s linear infinite;
+      transform: perspective(500px) rotateX(60deg);
+    }
+
+    .circuit-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 50% 50%, #00fff2 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(90deg, transparent 19px, #00fff2 19px, #00fff2 20px, transparent 20px) 0 0 / 20px 20px;
+      opacity: 0.1;
+      animation: circuitPulse 2s ease-in-out infinite;
+    }
+
+    .matrix-rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, 
+        rgba(0,255,242,0.1) 0%,
+        rgba(0,255,242,0.05) 50%,
+        transparent 100%);
+      animation: matrixFall 20s linear infinite;
     }
 
     .neo-title {
       position: relative;
-      font-size: 4.5em;
+      font-size: 5em;
       margin-bottom: 2rem;
       z-index: 1;
+      text-transform: uppercase;
     }
 
     .glitch {
       position: relative;
       color: #00fff2;
-      text-shadow: 3px 3px 0 #ff00ff;
-      animation: glitch 3s infinite;
+      text-shadow: 
+        3px 3px 0 #ff00ff,
+        -2px -2px 0 #0000ff;
+      animation: glitchText 3s infinite;
     }
 
-    .avatar-container {
+    .cyber-badge {
       position: relative;
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 2rem;
+      background: rgba(0,255,242,0.05);
+      border: 1px solid rgba(0,255,242,0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 600px;
     }
 
-    .avatar-hexagon {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #00fff2, #4fb3bf);
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      animation: rotate 10s linear infinite;
-    }
-
-    .avatar-img {
+    .badge-glow {
       position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 90%;
-      height: 90%;
-      object-fit: cover;
-      border-radius: 10px;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: radial-gradient(circle at 50% 50%, 
+        rgba(0,255,242,0.2),
+        transparent 70%);
+      filter: blur(8px);
+      animation: badgePulse 4s ease-in-out infinite;
     }
 
-    .avatar-glow {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      background: radial-gradient(circle, #00fff2 0%, transparent 70%);
-      opacity: 0.5;
-      animation: pulse 2s ease-in-out infinite;
+    .cyber-glow {
+      text-shadow: 
+        0 0 5px #00fff2,
+        0 0 10px #00fff2,
+        0 0 20px #00fff2;
+      animation: textPulse 2s ease-in-out infinite;
     }
 
-    .welcome-text {
-      font-size: 2em;
-      margin-bottom: 1.5rem;
-    }
-
-    .name-highlight {
-      position: relative;
-      color: #00fff2;
-      font-weight: bold;
-      text-shadow: 2px 2px 0 rgba(255,0,255,0.5);
-    }
-
-    .emoji-wave {
-      display: inline-block;
-      animation: wave 2.5s ease-in-out infinite;
-      transform-origin: 70% 70%;
-    }
-
-    .typing-effect {
-      display: block;
-      overflow: hidden;
-      border-right: 3px solid #00fff2;
-      white-space: nowrap;
-      animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-    }
-
-    .fade-in {
-      display: block;
-      margin-top: 1rem;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards 3.5s;
-    }
-
-    @keyframes gridMove {
-      from { transform: translateY(0); }
-      to { transform: translateY(50px); }
-    }
-
-    @keyframes glitch {
+    @keyframes glitchText {
       0%, 100% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(2px, -2px); }
-      60% { transform: translate(-2px, -2px); }
+      20% { transform: translate(-3px, 3px); filter: hue-rotate(90deg); }
+      40% { transform: translate(3px, -3px); filter: hue-rotate(180deg); }
+      60% { transform: skew(5deg, 5deg); filter: hue-rotate(270deg); }
     }
 
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes circuitPulse {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.2; }
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.3; }
+    @keyframes matrixFall {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(100%); }
     }
 
-    @keyframes wave {
-      0%, 100% { transform: rotate(0deg); }
-      20%, 60% { transform: rotate(25deg); }
-      40%, 80% { transform: rotate(-25deg); }
+    @keyframes badgePulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
     }
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    @keyframes textPulse {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.5); }
     }
 
-    @keyframes blink {
-      from, to { border-color: transparent; }
-      50% { border-color: #00fff2; }
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    /* Keep existing animations but modify as needed */
+    /* ... rest of your existing styles ... */
   </style>
 
   <hr>
