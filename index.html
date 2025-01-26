@@ -111,12 +111,135 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    body {
+      cursor: none;
+  }
+  
+  .cursor {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--neon-glow);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+  }
+  
+  .cursor-trail {
+      width: 8px;
+      height: 8px;
+      background: var(--neon-glow);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.5;
+      transition: 0.1s ease-out;
+  }
+  
+  @keyframes fadeOut {
+      from { opacity: 0.5; }
+      to { opacity: 0; }
+  }
   </style>
 
-   
-  </style>
+
 </head>
 <body>
+
+  
+  
+    <div class="cursor"></div>
+
+    <script>
+    const cursor = document.querySelector('.cursor');
+    const trails = [];
+    const trailCount = 15; // Increased trail count
+    let lastX = 0;
+    let lastY = 0;
+    let isMoving = false;
+    let animationFrame;
+
+    // Create trail elements
+    for(let i = 0; i < trailCount; i++) {
+      const trail = document.createElement('div');
+      trail.className = 'cursor-trail';
+      trail.style.opacity = 1 - (i / trailCount); // Graduated opacity
+      trail.style.transform = 'scale(' + (1 - (i / trailCount) * 0.5) + ')'; // Graduated scale
+      document.body.appendChild(trail);
+      trails.push({
+        element: trail,
+        x: 0,
+        y: 0
+      });
+    }
+
+    // Smooth cursor movement with interpolation
+    function updateCursor(e) {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      isMoving = true;
+    }
+
+    function render() {
+      if (isMoving) {
+        cursor.style.left = lastX - 10 + 'px';
+        cursor.style.top = lastY - 10 + 'px';
+        
+        // Update trail positions with smooth interpolation
+        trails.forEach((trail, index) => {
+          const nextTrail = trails[index - 1];
+          const targetX = index === 0 ? lastX : nextTrail.x;
+          const targetY = index === 0 ? lastY : nextTrail.y;
+          
+          trail.x += (targetX - trail.x) * 0.3;
+          trail.y += (targetY - trail.y) * 0.3;
+          
+          trail.element.style.left = trail.x - 4 + 'px';
+          trail.element.style.top = trail.y - 4 + 'px';
+        });
+      }
+      animationFrame = requestAnimationFrame(render);
+    }
+
+    // Event listeners with performance optimization
+    document.addEventListener('mousemove', updateCursor, { passive: true });
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = 1;
+      trails.forEach(trail => trail.element.style.opacity = 1);
+    });
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = 0;
+      trails.forEach(trail => trail.element.style.opacity = 0);
+    });
+
+    // Start animation loop
+    render();
+
+    // Cleanup on page unload
+    window.addEventListener('unload', () => {
+      cancelAnimationFrame(animationFrame);
+    });
+    </script>
+
+    <style>
+    .cursor, .cursor-trail {
+      pointer-events: none;
+      will-change: transform;
+      animation: colorChange 5s infinite;
+      }
+
+      @keyframes colorChange {
+        0% { border-color: var(--neon-glow); background: var(--neon-glow); }
+        25% { border-color: #ff00ff; background: #ff00ff; }
+        50% { border-color: #00ff00; background: #00ff00; }
+        75% { border-color: #ff0000; background: #ff0000; }
+        100% { border-color: var(--neon-glow); background: var(--neon-glow); }
+      }
+
+
+
   <div class="hero-section">
     <div class="cyber-grid">
       <div class="grid-line"></div>
@@ -1653,24 +1776,24 @@
       }
       </style>
 
-      <script>
-      function showModal(program, output) {
+    <script>
+    function showModal(program, output) {
       const modal = document.createElement('div');
       modal.className = 'modal';
       modal.innerHTML = `
         <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="highlight">Program Output</h2>
-          <button class="close-btn" onclick="this.closest('.modal').remove()">×</button>
-        </div>
-        <div class="modal-body">
-          <img src="${output}" alt="Program Output" class="output-image">
-          <h3 class="highlight">Program Code</h3>
-          <iframe src="${program}" class="code-frame"></iframe>
-        </div>
+          <div class="modal-header">
+            <h2 class="highlight">Program Output</h2>
+            <button class="close-btn" onclick="this.closest('.modal').remove()">×</button>
+          </div>
+          <div class="modal-body">
+            <img src="${output}" alt="Program Output" class="output-image">
+            <h3 class="highlight">Program Code</h3>
+            <iframe src="${program}" class="code-frame"></iframe>
+          </div>
         </div>
       `;
       document.body.appendChild(modal);
-      }
-      </script>
+    }
+    </script>
 </body>
